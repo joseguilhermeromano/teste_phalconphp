@@ -53,9 +53,9 @@ class NoticiaController extends ControllerBase
         $action = "cadastrar";
 
         if(!isset($data["id"])){
-            $action="editar";
             $noticia->data_cadastro = new DateTime();
         }else{
+            $action="editar";
             $noticia_salva = Noticia::FindFirst($data["id"]);
             $noticia->data_cadastro = new DateTime($noticia_salva->getDataCadastro());
         }
@@ -75,6 +75,7 @@ class NoticiaController extends ControllerBase
                 [
                     "controller" => "noticia",
                     "action"     => $action,
+                    "params"     => array($data["id"])
                 ]
             );
         }
@@ -90,6 +91,7 @@ class NoticiaController extends ControllerBase
                 [
                     "controller" => "noticia",
                     "action"     => $action,
+                    "params"     => array($data["id"])
                 ]
             );
         }
