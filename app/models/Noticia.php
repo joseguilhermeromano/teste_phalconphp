@@ -11,6 +11,7 @@ class Noticia extends Model
     private $titulo;
     private $texto;    
     private $data_ultima_atualizacao;
+    private $data_cadastro;
 
     public function initialize()
     {
@@ -63,6 +64,28 @@ class Noticia extends Model
         }
 
         $this->data_ultima_atualizacao = $date->format('Y-m-d H:i:s');
+    }
+
+    public function getDataCadastro(){
+        return $this->data_cadastro;
+    }
+
+    public function setDataCadastro(DateTime $date = null){
+        if (!is_object($date)) {
+            $date = new DateTime;
+        }
+
+        $this->data_cadastro = $date->format('Y-m-d H:i:s');
+    }
+
+    public function toStringDataCadastro(){
+        $date = new DateTime;
+
+        if (!empty($this->data_cadastro)) {
+            $date = new DateTime($this->data_cadastro);
+        }
+
+        return $date->format('d/m/Y H:i:s');
     }
     
 }
