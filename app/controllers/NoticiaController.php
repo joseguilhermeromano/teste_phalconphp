@@ -10,7 +10,9 @@ class NoticiaController extends ControllerBase
 
     public function listaAction()
     {
+        $noticias = Noticia::find(['order' => 'id ASC']);
 
+        $this->view->setParamToView("noticias", $noticias);
         $this->view->pick("noticia/listar");
     }
 
@@ -40,6 +42,15 @@ class NoticiaController extends ControllerBase
         $form = new NoticiaForm();
 
         $noticia = new Noticia();
+        $action = "cadastrar";
+
+        if(!isset($data["id"]))
+        {
+            $date = new DateTime();
+            $action="editar";
+            $noticia->data_cadastro = $date->format('Y-m-d H:i:s');
+        }
+
         $noticia->titulo = $data['titulo'];
         $noticia->texto = $data['texto'];
         $noticia->data_ultima_atualizacao = new DateTime();
@@ -54,7 +65,7 @@ class NoticiaController extends ControllerBase
             return $this->dispatcher->forward(
                 [
                     "controller" => "noticia",
-                    "action"     => "cadastrar",
+                    "action"     => $action,
                 ]
             );
         }
@@ -71,20 +82,51 @@ class NoticiaController extends ControllerBase
             return $this->dispatcher->forward(
                 [
                     "controller" => "noticia",
-                    "action"     => "cadastrar",
+                    "action"     => $action,
                 ]
             );
         }
 
         $this->flash->success(
-            "Cadastro efetuado com sucesso."
+            "Registro salvo com sucesso."
         );
 
         return $this->response->redirect(array('for' => 'noticia.lista'));
     }
 
-     public function excluirAction($id)
-     {
+    public function excluirAction($id)
+    {
+        if(empty($id)){
+            $this->flash->error(
+                "O id da Notícia não foi informado."
+            );
+            return $this->response->redirect(array('for' => 'noticia.lista'));
+        }
+
+        $noticia = Noticia::FindFirst($id);
+
+        if($noticia !== false)
+        {
+            if(!$noticia->delete())
+            {
+                $this->flash->error(
+                    "Erro ao tentar excluir o registro."
+                );
+            }
+            else
+            {
+                $this->flash->success(
+                    "Registro excluído com sucesso."
+                );
+            }
+        }
+        else
+        {
+            $this->flash->error(
+                "Registro não existe."
+            );
+        }
+
         return $this->response->redirect(array('for' => 'noticia.lista'));
      }
 
