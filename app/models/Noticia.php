@@ -7,11 +7,62 @@ use Phalcon\Paginator\Adapter\Model as Paginator;
 
 class Noticia extends Model
 {
+    private $id;
+    private $titulo;
+    private $texto;    
+    private $data_ultima_atualizacao;
 
     public function initialize()
     {
         $this->setSource("noticia");
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+    }
+
+    public function getTexto()
+    {
+        return $this->texto;
+    }
+
+    public function setTexto($texto)
+    {
+        $this->texto = $texto;
+    }
+
+    public function getDataUltimaAtualizacao()
+    {
+        if (!is_object($this->data_ultima_atualizacao)) {
+            $this->data_ultima_atualizacao = new DateTime;
+        }
+
+        return $this->data_ultima_atualizacao->format('d/m/Y H:i:s');
+    }
+
+    public function setDataUltimaAtualizacao(DateTime $date = null)
+    {
+        if (!is_object($date)) {
+            $date = new DateTime;
+        }
+
+        $this->data_ultima_atualizacao = $date->format('Y-m-d H:i:s');
+    }
     
 }
