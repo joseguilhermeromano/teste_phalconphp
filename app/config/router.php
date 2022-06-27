@@ -16,8 +16,8 @@ $router->add("/usuario/editar",                 array("controller" => "usuario",
 $router->add("/", array( "controller" => "Index", "action"     => "index"))->setName('index.index');
 $router->add("/noticias",                        array("controller" => "Noticia", "action"          => "lista"))->setName('noticia.lista');
 $router->add("/noticias/cadastrar",              array("controller" => "Noticia", "action"           => "cadastrar"))->setName('noticia.cadastrar');
-$router->addGet("/noticias/editar/{id:[0-9]*}",  array("controller" => "Noticia",  "action"          => "editar"))->setName('noticia.editar');
 $router->add("/noticias/editar",                 array("controller" => "Noticia",  "action"          => "editar"))->setName('noticia.editar');
+$router->addGet("/noticias/editar/{id:[0-9]*}",  array("controller" => "Noticia",  "action"          => "editar"))->setName('noticia.editarid');
 $router->addPost("/noticias/salvar",             array("controller" => "Noticia", "action"           => "salvar"))->setName('noticia.salvar');
 $router->addGet("/noticias/excluir/{id:[0-9]*}",  array("controller" => "Noticia",  "action"          => "excluir"))->setName('noticia.excluir');
 
