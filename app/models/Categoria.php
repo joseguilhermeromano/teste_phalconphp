@@ -11,6 +11,12 @@ class Categoria extends Model
     public function initialize()
     {
         $this->setSource("categoria");
+
+        $this->hasMany(
+            'id',
+            'NoticiaCategoria',
+            'id_categoria'
+        );
     }
 
     public function getId()
