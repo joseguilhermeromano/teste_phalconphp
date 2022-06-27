@@ -7,6 +7,9 @@
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="<?= $this->url->getStatic('css/bootstrap.min.css') ?>" rel="stylesheet">
+
+        <link rel="stylesheet" href="<?= $this->url->getStatic('css/select2.min.css') ?>" type="text/css">
+
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -155,6 +158,7 @@
 
 
         <script src="<?= $this->url->getStatic('js/bootstrap-datetimepicker.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= $this->url->getStatic('js/plugins/select2.min.js') ?>"></script>
 
         <script>
             $(document).ready(function(){

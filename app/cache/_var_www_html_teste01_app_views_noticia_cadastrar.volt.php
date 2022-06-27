@@ -7,14 +7,16 @@
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="<?= $this->url->getStatic('css/bootstrap.min.css') ?>" rel="stylesheet">
+        <link href="<?= $this->url->getStatic('css/bootstrap-datetimepicker.min.css') ?>" rel="stylesheet">
+
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="<?= $this->url->getStatic('css/styles.css') ?>" rel="stylesheet">
         <link href="<?= $this->url->getStatic('css/fileinput.min.css') ?>" rel="stylesheet">
-
-        <link href="<?= $this->url->getStatic('css/bootstrap-datetimepicker.min.css') ?>" rel="stylesheet">
-
+        
+        <link rel="stylesheet" href="<?= $this->url->getStatic('css/select2.min.css') ?>" type="text/css">
+        
         <link href="<?= $this->url->getStatic('css/font-awesome.min.css') ?>" rel="stylesheet">
 
 
@@ -105,6 +107,31 @@
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-sm-12">
+                                                <label for ="categorias">Categorias <span class="error">(*)<span></label>
+                                                <select class="categorias" name="categorias[]" multiple="multiple" style="width:100%;">
+                                                    <option value="Javascript">Javascript</option>
+                                                    <option value="Python">Python</option>
+                                                    <option value="LISP">LISP</option>
+                                                    <option value="C++">C++</option>
+                                                    <option value="jQuery">jQuery</option>
+                                                    <option value="Ruby">Ruby</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <div class='input-group date' id="id_0">
+                                                        <input type='text' class="form-control" value="05/16/2018 12:31:00 AM" name="datapublicacao"/>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
                                                 <label for ="Texto">Texto</label>
                                                 <?= $this->tag->textArea(['texto', 'class' => 'form-control tinymce-editor']) ?>
                                             </div>
@@ -133,7 +160,15 @@
     	<!-- script references -->
 		
         <script src="<?= $this->url->getStatic('js/jquery-2.2.0.min.js') ?>"></script>
+        
 		<script src="<?= $this->url->getStatic('js/bootstrap.min.js') ?>"></script>
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+
+        <script src="<?= $this->url->getStatic('js/bootstrap-datetimepicker.min.js') ?>"></script>
+
+        <script src="<?= $this->url->getStatic('js/demo.js') ?>"></script>
+
 		<script src="<?= $this->url->getStatic('js/scripts.js') ?>"></script>
 
         <script src="<?= $this->url->getStatic('js/jquery.maskedinput.min.js') ?>"></script>
@@ -141,9 +176,7 @@
         <script src="<?= $this->url->getStatic('js/jquery.validate.min.js') ?>"></script>
         <script src="<?= $this->url->getStatic('js/langs/messages_pt_PT.min.js') ?>"></script>
 
-
-        <script src="<?= $this->url->getStatic('js/bootstrap-datetimepicker.min.js') ?>"></script>
-
+        <script src="<?= $this->url->getStatic('js/plugins/select2.min.js') ?>"></script>
         <script>
             $(document).ready(function(){
                 $("span.fechar").click(function(){
@@ -156,8 +189,7 @@
         
         <script>
             $(document).ready(function(){
-
-
+                $('.categorias').select2();
             });
         </script>
     

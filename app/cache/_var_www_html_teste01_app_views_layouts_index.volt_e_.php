@@ -1,4 +1,4 @@
-a:7:{i:0;s:930:"<!DOCTYPE html>
+a:7:{i:0;s:1056:"<!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -7,14 +7,16 @@ a:7:{i:0;s:930:"<!DOCTYPE html>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="<?= $this->url->getStatic('css/bootstrap.min.css') ?>" rel="stylesheet">
+        <link href="<?= $this->url->getStatic('css/bootstrap-datetimepicker.min.css') ?>" rel="stylesheet">
+
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="<?= $this->url->getStatic('css/styles.css') ?>" rel="stylesheet">
         <link href="<?= $this->url->getStatic('css/fileinput.min.css') ?>" rel="stylesheet">
-
-        <link href="<?= $this->url->getStatic('css/bootstrap-datetimepicker.min.css') ?>" rel="stylesheet">
-
+        
+        <link rel="stylesheet" href="<?= $this->url->getStatic('css/select2.min.css') ?>" type="text/css">
+        
         <link href="<?= $this->url->getStatic('css/font-awesome.min.css') ?>" rel="stylesheet">
 
 
@@ -83,7 +85,7 @@ a:7:{i:0;s:930:"<!DOCTYPE html>
 
             <?= $this->flash->output(true) ?>
 
-            ";s:7:"content";N;i:2;s:1167:"
+            ";s:7:"content";N;i:2;s:1480:"
 
             <div class="col-md-12 text-center">
                 <p>Copyright 2015 - Todos os Direitos reservados. <a href="http://www.siteparaimobiliaria.imb.br/" target="_blank">Site para imobiliária Midas</a></p>
@@ -92,7 +94,15 @@ a:7:{i:0;s:930:"<!DOCTYPE html>
     	<!-- script references -->
 		
         <script src="<?= $this->url->getStatic('js/jquery-2.2.0.min.js') ?>"></script>
+        
 		<script src="<?= $this->url->getStatic('js/bootstrap.min.js') ?>"></script>
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+
+        <script src="<?= $this->url->getStatic('js/bootstrap-datetimepicker.min.js') ?>"></script>
+
+        <script src="<?= $this->url->getStatic('js/demo.js') ?>"></script>
+
 		<script src="<?= $this->url->getStatic('js/scripts.js') ?>"></script>
 
         <script src="<?= $this->url->getStatic('js/jquery.maskedinput.min.js') ?>"></script>
@@ -100,9 +110,7 @@ a:7:{i:0;s:930:"<!DOCTYPE html>
         <script src="<?= $this->url->getStatic('js/jquery.validate.min.js') ?>"></script>
         <script src="<?= $this->url->getStatic('js/langs/messages_pt_PT.min.js') ?>"></script>
 
-
-        <script src="<?= $this->url->getStatic('js/bootstrap-datetimepicker.min.js') ?>"></script>
-
+        <script src="<?= $this->url->getStatic('js/plugins/select2.min.js') ?>"></script>
         <script>
             $(document).ready(function(){
                 $("span.fechar").click(function(){

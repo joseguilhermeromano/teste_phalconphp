@@ -1,7 +1,5 @@
 <?php
 
-
-
 use Phalcon\Mvc\Model;
 use Phalcon\Paginator\Adapter\Model as Paginator;
 
