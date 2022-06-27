@@ -98,5 +98,15 @@ class Noticia extends Model
 
         $this->data_publicacao = $date->format('Y-m-d H:i:s');
     }
+
+    public function toStringDataPublicacao(){
+        $date = new DateTime;
+
+        if (!empty($this->data_publicacao)) {
+            $date = new DateTime($this->data_publicacao);
+        }
+
+        return $date->format('d/m/Y H:i:s');
+    }
     
 }

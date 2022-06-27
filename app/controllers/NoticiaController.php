@@ -58,14 +58,15 @@ class NoticiaController extends ControllerBase
             $action="editar";
             $noticia_salva = Noticia::FindFirst($data["id"]);
             $noticia->data_cadastro = new DateTime($noticia_salva->getDataCadastro());
+            $noticia->data_publicacao =  new DateTime($noticia_salva->getDataPublicacao());
         }
 
         $noticia->titulo = $data['titulo'];
         $noticia->texto = $data['texto'];
         $noticia->data_ultima_atualizacao = new DateTime();
 
-        if($data["publicar"] === true && !empty($data['data_publicacao'])){
-            $noticia->data_publicacao = new DateTime($data['data_publicacao']);
+        if(isset($data["publicar"]) && !empty($data['data_publicacao'])){
+            $noticia->data_publicacao = new DateTime(strtotime($data['data_publicacao']));
         }
 
         if (!$form->isValid($data, $noticia)) {

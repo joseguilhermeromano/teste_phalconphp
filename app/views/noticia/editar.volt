@@ -30,6 +30,38 @@
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-sm-12">
+                                                <label for ="categorias">Categorias</label>
+                                                <select class="categorias" name="categorias[]" multiple="multiple" style="width:100%;">
+                                                    <option value="Javascript">Javascript</option>
+                                                    <option value="Python">Python</option>
+                                                    <option value="LISP">LISP</option>
+                                                    <option value="C++">C++</option>
+                                                    <option value="jQuery">jQuery</option>
+                                                    <option value="Ruby">Ruby</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-sm-3">
+                                                <input type="checkbox" placeholder="" id="publicar" name="publicar"/>
+                                                <label for ="publicar">Publicar? </label>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="datapublicacao" style="display:none">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label for ="data_publicacao">Data de Publicação</label>
+                                                    <div class='input-group date' id="id_0">
+                                                        <input type='text' class="form-control" name="data_publicacao" id="set_publicacao"/>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
                                                 <label for ="Texto">Texto</label>
                                                 <textarea name="texto" class= "form-control">{{ noticia.texto }}</textarea>
                                             </div>
@@ -53,10 +85,15 @@
 
     {%  block extrafooter %}
         
-        <script>
-            $(document).ready(function(){
+    <script>
+        $(document).ready(function(){
+            $('.categorias').select2();
 
+            $('#set_publicacao').val('{{ noticia.toStringDataPublicacao() }}')
 
+            $('#publicar').on("change", function (){
+                $('#datapublicacao').toggle();
             });
-        </script>
+        });
+    </script>
     {% endblock %}
