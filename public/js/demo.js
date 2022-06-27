@@ -5,7 +5,7 @@
             "showClose": true,
             "showClear": true,
             "showTodayButton": true,
-            "format": "DD/MM/YYYY hh:mm:ss",
+            "format": "DD/MM/YYYY HH:mm:ss",
             "locale": "pt-br"
         });
     });

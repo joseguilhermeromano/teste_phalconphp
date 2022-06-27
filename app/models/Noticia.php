@@ -10,6 +10,7 @@ class Noticia extends Model
     private $texto;    
     private $data_ultima_atualizacao;
     private $data_cadastro;
+    private $data_publicacao;
 
     public function initialize()
     {
@@ -84,6 +85,18 @@ class Noticia extends Model
         }
 
         return $date->format('d/m/Y H:i:s');
+    }
+
+    public function getDataPublicacao(){
+        return $this->data_publicacao;
+    }
+
+    public function setDataPublicacao(DateTime $date = null){
+        if (!is_object($date)) {
+            $date = new DateTime;
+        }
+
+        $this->data_publicacao = $date->format('Y-m-d H:i:s');
     }
     
 }

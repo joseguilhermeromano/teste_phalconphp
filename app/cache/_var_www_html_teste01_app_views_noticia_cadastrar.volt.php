@@ -129,7 +129,7 @@
                                                 <div class="form-group">
                                                     <label for ="data_publicacao">Data de Publicação</label>
                                                     <div class='input-group date' id="id_0">
-                                                        <input type='text' class="form-control" value="05/16/2018 12:31:00 AM" name="data_publicacao"/>
+                                                        <input type='text' class="form-control" value="" name="data_publicacao"/>
                                                         <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-calendar"></span>
                                                         </span>

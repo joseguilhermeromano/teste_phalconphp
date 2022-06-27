@@ -64,6 +64,10 @@ class NoticiaController extends ControllerBase
         $noticia->texto = $data['texto'];
         $noticia->data_ultima_atualizacao = new DateTime();
 
+        if($data["publicar"] === true && !empty($data['data_publicacao'])){
+            $noticia->data_publicacao = new DateTime($data['data_publicacao']);
+        }
+
         if (!$form->isValid($data, $noticia)) {
             $messages = $form->getMessages();
         

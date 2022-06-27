@@ -7,17 +7,16 @@
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="<?= $this->url->getStatic('css/bootstrap.min.css') ?>" rel="stylesheet">
-
-        <link rel="stylesheet" href="<?= $this->url->getStatic('css/select2.min.css') ?>" type="text/css">
+        <link href="<?= $this->url->getStatic('css/bootstrap-datetimepicker.min.css') ?>" rel="stylesheet">
 
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="<?= $this->url->getStatic('css/styles.css') ?>" rel="stylesheet">
         <link href="<?= $this->url->getStatic('css/fileinput.min.css') ?>" rel="stylesheet">
-
-        <link href="<?= $this->url->getStatic('css/bootstrap-datetimepicker.min.css') ?>" rel="stylesheet">
-
+        
+        <link rel="stylesheet" href="<?= $this->url->getStatic('css/select2.min.css') ?>" type="text/css">
+        
         <link href="<?= $this->url->getStatic('css/font-awesome.min.css') ?>" rel="stylesheet">
 
 
@@ -148,7 +147,15 @@
     	<!-- script references -->
 		
         <script src="<?= $this->url->getStatic('js/jquery-2.2.0.min.js') ?>"></script>
+        
 		<script src="<?= $this->url->getStatic('js/bootstrap.min.js') ?>"></script>
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+
+        <script src="<?= $this->url->getStatic('js/bootstrap-datetimepicker.min.js') ?>"></script>
+
+        <script src="<?= $this->url->getStatic('js/demo.js') ?>"></script>
+
 		<script src="<?= $this->url->getStatic('js/scripts.js') ?>"></script>
 
         <script src="<?= $this->url->getStatic('js/jquery.maskedinput.min.js') ?>"></script>
@@ -156,10 +163,7 @@
         <script src="<?= $this->url->getStatic('js/jquery.validate.min.js') ?>"></script>
         <script src="<?= $this->url->getStatic('js/langs/messages_pt_PT.min.js') ?>"></script>
 
-
-        <script src="<?= $this->url->getStatic('js/bootstrap-datetimepicker.min.js') ?>"></script>
-        <script type="text/javascript" src="<?= $this->url->getStatic('js/plugins/select2.min.js') ?>"></script>
-
+        <script src="<?= $this->url->getStatic('js/plugins/select2.min.js') ?>"></script>
         <script>
             $(document).ready(function(){
                 $("span.fechar").click(function(){
